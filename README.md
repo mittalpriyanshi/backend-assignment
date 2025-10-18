@@ -9,13 +9,11 @@ Includes:
 - Unit tests (Jest + Supertest)
 - Dockerized setup for easy deployment
 
----
 
 ## ⚙️ Setup Instructions
 
 ### 1️⃣ Clone and install dependencies
 
-``bash
 git clone <your-repo-url>
 cd backend-assignment
 npm install
@@ -33,21 +31,28 @@ npm run dev
 Your backend will start at:
 👉 http://localhost:8000/
 
-###🧪 Running Tests
+### 🧪 Running Tests
 
 Unit and integration tests use an in-memory SQLite database.
+
 npm test
 
 ### Test coverage includes:
 
 Validation of CSV rows
+
 CSV upload API behavior
+
 Search filters and pagination
 
 🐳 Running with Docker
+
 Build and run using Docker Compose:
+
 docker compose up --build
+
 This will:
+
 - Build the Node.js image
 - Start the API server on port 8000
 - Mount the local data/ directory for database persistence
@@ -56,6 +61,7 @@ This will:
 👉 http://localhost:8000/
 
 - To stop:
+
 docker compose down
 
 ## 🧾 API Documentation
@@ -63,6 +69,7 @@ docker compose down
 1️⃣ Health Check
 
 GET /
+
 Check if the server is running.
 
 Response:
@@ -80,8 +87,11 @@ POST /upload
 CSV Format:
 
 sku,name,brand,color,size,mrp,price,quantity
+
 P001,Classic T-Shirt,StreamThreads,Red,M,600,500,10
+
 P002,Denim Jeans,StreamThreads,Blue,L,1200,999,5
+
 P003,Cotton Hoodie,StreamThreads,Grey,XL,1500,1400,8
 
 
@@ -194,17 +204,24 @@ During CSV upload, each row is validated as follows:
 - Invalid rows are reported in the "failed" array with row number and reason.
 
 🧪 Test Examples
+
 Run tests locally:
+
 npm test
 
 Example test output:
+
 PASS  tests/validate.test.js
+
 PASS  tests/csvUpload.test.js
+
 PASS  tests/search.test.js
 
 Test Suites: 3 passed, 3 total
+
 Tests:       10 passed, 10 total
 
 
 Author: Priyanshi Mittal
+
 Developed with: ❤️ Node.js, Express, SQLite
